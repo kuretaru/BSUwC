@@ -1,0 +1,33 @@
+Generating report for minidump
+
+Application version 5.0.2.0
+ ... built from changelist 0
+
+OS version Linux 5.18.7-zen1-1-zen (network name: tea-with-milk)
+Running 6 x86_64 processors (12 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-VulkanRHI.so!GetDepthStencilStageAndAccessFlags(ERHIAccess, ERHIAccess, unsigned int&, unsigned int&, VkImageLayout&, bool) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/VulkanRHI/Private/VulkanBarriers.cpp:439]
+libUnrealEditor-VulkanRHI.so!FVulkanDynamicRHI::RHICreateTransition(FRHITransition*, FRHITransitionCreateInfo const&) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/VulkanRHI/Private/VulkanBarriers.cpp:800]
+libUnrealEditor-RenderCore.so!FRDGBarrierBatchBegin::CreateTransition() [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/RenderCore/Private/RenderGraphPass.cpp:162]
+libUnrealEditor-RenderCore.so!FRDGBuilder::CreatePassBarriers() [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/RenderCore/Private/RenderGraphBuilder.cpp:2550]
+libUnrealEditor-Core.so!TGraphTask<TFunctionGraphTaskImpl<void (ENamedThreads::Type, TRefCountPtr<FGraphEvent> const&), (ESubsequentsMode::Type)0> >::ExecuteTask(TArray<FBaseGraphTask*, TSizedDefaultAllocator<32> >&, ENamedThreads::Type, bool) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:975]
+libUnrealEditor-Core.so!void LowLevelTasks::FTask::Init<FTaskGraphCompatibilityImplementation::QueueTask(FBaseGraphTask*, bool, ENamedThreads::Type, ENamedThreads::Type)::'lambda'()>(char16_t const*, LowLevelTasks::ETaskPriority, FTaskGraphCompatibilityImplementation::QueueTask(FBaseGraphTask*, bool, ENamedThreads::Type, ENamedThreads::Type)::'lambda'()&&, bool)::'lambda'(bool)::operator()(bool) const [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/Runtime/Core/Public/Async/Fundamental/Task.h:350]
+libUnrealEditor-Core.so!LowLevelTasks::TTaskDelegate<void (bool), 48u>::TTaskDelegateImpl<void LowLevelTasks::FTask::Init<FTaskGraphCompatibilityImplementation::QueueTask(FBaseGraphTask*, bool, ENamedThreads::Type, ENamedThreads::Type)::'lambda'()>(char16_t const*, LowLevelTasks::ETaskPriority, FTaskGraphCompatibilityImplementation::QueueTask(FBaseGraphTask*, bool, ENamedThreads::Type, ENamedThreads::Type)::'lambda'()&&, bool)::'lambda'(bool), false>::CallAndMove(LowLevelTasks::TTaskDelegate<void (bool), 48u>&, void*, unsigned int, bool) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/Runtime/Core/Public/Async/Fundamental/TaskDelegate.h:171]
+libUnrealEditor-Core.so!bool LowLevelTasks::FScheduler::TryExecuteTaskFrom<&(LowLevelTasks::TLocalQueueRegistry<1024u>::TLocalQueue::DequeueGlobal(bool, bool)), false>(LowLevelTasks::TLocalQueueRegistry<1024u>::TLocalQueue*, LowLevelTasks::TLocalQueueRegistry<1024u>::FOutOfWork&, bool, bool) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/Core/Private/Async/Fundamental/Scheduler.cpp:278]
+libUnrealEditor-Core.so!LowLevelTasks::FScheduler::WorkerMain(LowLevelTasks::FSleepEvent*, LowLevelTasks::TLocalQueueRegistry<1024u>::TLocalQueue*, unsigned int, bool) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/Core/Private/Async/Fundamental/Scheduler.cpp:320]
+libUnrealEditor-Core.so!FThreadImpl::Run() [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/Core/Private/HAL/Thread.cpp:66]
+libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/home/kuretaru/projects/project__MwUE__/UnrealEngine/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:185]
+libc.so.6!UnknownFunction(0x8c54c)
+libc.so.6!clone(+0x43)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
