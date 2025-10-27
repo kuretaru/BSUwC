@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "project__BSUwC__",
+			"Path": "/home/kuretaru/Documents/Unreal Projects/project__BSUwC__/Source/project__BSUwC__.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "project__BSUwC__Editor",
+			"Path": "/home/kuretaru/Documents/Unreal Projects/project__BSUwC__/Source/project__BSUwC__Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
